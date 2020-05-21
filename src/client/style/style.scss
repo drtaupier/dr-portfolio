@@ -1,0 +1,77 @@
+$website-bg: #f3f3f3;
+$font-claro: #f3f3f3;
+$font-blanco:#fff;
+$font-gris:#ccc;
+$header-bg: #3D638A;
+$footer-bg :#245485;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $website-bg;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fl);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "header header header" "section1 section1 section1" "section2 section2 section2""section3 section3 section3""footer footer footer";
+}
+
+header {
+    grid-area: header;
+    background: $header-bg;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.logo h1 {
+    color: $font-claro;
+    font-size: 1.6em;
+    font-weight: normal;
+}
+
+header nav {
+    display: flex;
+    margin-right: 60px;
+}
+
+nav {
+    ul {
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+    }
+    a {
+        color: $font-gris;
+        display: block;
+        padding: 6px 15px;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            color: $font-blanco;
+            transition: all 0.2s;
+        }
+    }
+}
+
+#sct1 {
+    grid-area: section1;
+    height: 650px;
+}
