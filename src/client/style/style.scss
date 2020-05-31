@@ -1,9 +1,12 @@
 $website-bg: #f3f3f3;
+$bg-blanco:#fff;
 $font-claro: #f3f3f3;
 $font-blanco:#fff;
 $font-gris:#ccc;
 $header-bg: #3D638A;
 $footer-bg :#245485;
+$open-sans:'Open Sans',
+sans-serif;
 * {
     padding: 0;
     margin: 0;
@@ -13,11 +16,12 @@ $footer-bg :#245485;
 body {
     background: $website-bg;
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: $open-sans;
 }
 
 .container {
     display: grid;
+    width: 100vw;
     grid-template-columns: repeat(3, 1fl);
     grid-template-rows: repeat(5, auto);
     grid-template-areas: "header header header" "section1 section1 section1" "section2 section2 section2""section3 section3 section3""footer footer footer";
@@ -26,47 +30,43 @@ body {
 header {
     grid-area: header;
     background: $header-bg;
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header .logo {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    margin-left: 60px;
-}
-
-.logo h1 {
-    color: $font-claro;
-    font-size: 1.6em;
-    font-weight: normal;
-}
-
-header nav {
-    display: flex;
-    margin-right: 60px;
-}
-
-nav {
-    ul {
-        list-style: none;
-    }
-    li {
-        display: inline-block;
-    }
-    a {
-        color: $font-gris;
-        display: block;
-        padding: 6px 15px;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
+    .logo {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 100px;
+        h1 {
             color: $font-blanco;
-            transition: all 0.2s;
+            font-size: 1.6em;
+            font-weight: normal;
+            font-family: $open-sans
+        }
+    }
+    nav {
+        display: flex;
+        margin-right: 100px;
+        ul {
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            font-family: $open-sans;
+        }
+        a {
+            color: $font-gris;
+            display: block;
+            padding: 6px 15px;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+                color: $font-blanco;
+                transition: all 0.2s;
+            }
         }
     }
 }
@@ -74,4 +74,47 @@ nav {
 #sct1 {
     grid-area: section1;
     height: 650px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        display: flex;
+        width: 90%;
+    }
+}
+
+#sct2 {
+    grid-area: section2;
+    height: 650px;
+    width: 100vw;
+    .imagen2 {
+        width: 40%;
+        height: 60%;
+    }
+    article {
+        width: 50%;
+        height: 100%;
+        .contenido {
+            width: 80%;
+            height: 60%;
+            border: #ccc;
+            background: $bg-blanco;
+        }
+    }
+}
+
+.fa-linkedin,
+.fa-github {
+    font-size: 1.5em;
+}
+
+.sticky {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    box-shadow: 0px 4px 3px rgba(0, 0, 0, .5);
+    height: 65px;
+    width: 100vw;
+    transition: all 0.3s;
 }
