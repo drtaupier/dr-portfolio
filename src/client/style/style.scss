@@ -104,6 +104,33 @@ header {
     }
 }
 
+#sct3 {
+    grid-area: section3;
+    height: 650px;
+    width: 100vw;
+}
+
+footer {
+    grid-area: footer;
+    height: 80px;
+    width: 100vw;
+    background: $footer-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h3 {
+        color: $font-blanco;
+        font-size: 1em;
+        font-weight: normal;
+    }
+    h2 {
+        color: $font-blanco;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+}
+
 .fa-linkedin,
 .fa-github {
     font-size: 1.5em;
