@@ -1,4 +1,6 @@
 $website-bg: #f3f3f3;
+$bg-error:#8f1717;
+$bg-success:#23700b;
 $bg-blanco:#fff;
 $font-claro: #f3f3f3;
 $font-blanco:#fff;
@@ -7,6 +9,7 @@ $header-bg: #3D638A;
 $footer-bg :#245485;
 $open-sans:'Open Sans',
 sans-serif;
+$sombra: #828282;
 * {
     padding: 0;
     margin: 0;
@@ -65,7 +68,7 @@ header {
             cursor: pointer;
             &:hover {
                 color: $font-blanco;
-                transition: all 0.2s;
+                transition: all 0.3s;
             }
         }
     }
@@ -73,33 +76,82 @@ header {
 
 #sct1 {
     grid-area: section1;
-    height: 650px;
+    height: 680px;
     width: 100vw;
+    background: $bg-blanco;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    img {
+    font-display: row;
+    box-shadow: 8px 5px 10px -7px rgba(120, 120, 120, 0.8);
+    .imagen1 {
+        width: 50%;
+        height: 100%;
         display: flex;
-        width: 90%;
+        justify-content: center;
+        align-items: center;
+        img {
+            display: flex;
+            width: 35%;
+            border-radius: 180px;
+            margin-left: 160px;
+            filter: grayscale(20%);
+        }
+    }
+    .intro {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .frase {
+            width: 70%;
+            padding: 10px;
+            text-align: justify;
+            margin-right: 290px;
+            h2 {
+                font-size: 2.5em;
+            }
+            P {
+                font-size: 1.5em;
+            }
+        }
     }
 }
 
 #sct2 {
     grid-area: section2;
-    height: 650px;
+    height: 680px;
     width: 100vw;
-    .imagen2 {
-        width: 40%;
-        height: 60%;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 8px 5px 10px -7px rgba(120, 120, 120, 0.8);
     article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 50%;
         height: 100%;
         .contenido {
             width: 80%;
             height: 60%;
-            border: #ccc;
+            border: 1px solid rgba(245, 240, 240, 0.952);
             background: $bg-blanco;
+            padding: 30px;
+            text-align: justify;
+            box-shadow: 7px 5px 8px rgb(189, 187, 187);
+        }
+    }
+    .imagen2 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 70%;
         }
     }
 }
@@ -108,6 +160,54 @@ header {
     grid-area: section3;
     height: 650px;
     width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    .formulario {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        form {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            input {
+                padding: 15px;
+                width: 90%;
+                margin-bottom: 5px;
+                outline: none;
+                border: none;
+            }
+            input[type='submit'] {
+                background: $footer-bg;
+                color: $font-blanco;
+                width: 25%;
+                margin-top: 8px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-bottom: 25px;
+            }
+            textarea {
+                width: 90%;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+    .imagen3 {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 70%;
+        }
+    }
 }
 
 footer {
@@ -119,15 +219,15 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    h3 {
-        color: $font-blanco;
-        font-size: 1em;
-        font-weight: normal;
-    }
+    h3,
     h2 {
         color: $font-blanco;
         font-size: 0.9em;
         font-weight: normal;
+        line-height: 1.6em;
+    }
+    h2 {
+        font-size: 0.8em;
     }
 }
 
@@ -144,4 +244,34 @@ footer {
     height: 65px;
     width: 100vw;
     transition: all 0.3s;
+}
+
+.msgError {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-error;
+    border: 1px solid $bg-error;
+    h2 {
+        color: $font-blanco;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+}
+
+.success {
+    width: 90%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-success;
+    border: 1px solid $bg-success;
+    h2 {
+        color: $font-blanco;
+        font-size: 0.9em;
+        font-weight: normal;
+    }
 }

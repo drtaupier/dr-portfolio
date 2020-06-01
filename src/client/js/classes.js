@@ -20,4 +20,14 @@ export class UI {
             }
         })
     }
+
+    message(mensaje, style) {
+        const formulario = document.getElementById('form');
+        const element = document.createElement('div');
+        element.classList.add(style);
+        element.innerHTML = `<h2>${mensaje}</h2>`;
+        formulario.appendChild(element);
+        setTimeout(() => document.querySelector(`.${style}`).remove(), 3000);
+    }
+
 }
