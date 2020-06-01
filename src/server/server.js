@@ -1,3 +1,4 @@
+projectData = [];
 const express = require('express');
 const app = express();
 /*Dependencies*/
@@ -11,10 +12,25 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(express.static('dist'));
+app.use(express.static('public'));
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World')
-// })
+app.get('/viewData', (req, res) => {
+    res.send(projectData);
+})
+
+app.post('/myContacts', (req, res) => {
+    const body = req.body;
+    let data = {
+        name: body.name,
+        lastName: body.lastName,
+        phone: body.phone,
+        email: body.email,
+        message: body.message
+    }
+    projectData.push(data);
+    res.send('Información enviada con éxito');
+    console.log(projectData);
+})
 
 const port = 3000;
 
