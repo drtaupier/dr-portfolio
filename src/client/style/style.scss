@@ -1,25 +1,32 @@
+$header-bg: #1b242f;
+$footer-bg: #16212E;
+$boton-bg:#322E61;
 $website-bg: #f3f3f3;
+$bg-blanco:#fff;
 $bg-error:#8f1717;
 $bg-success:#23700b;
-$bg-blanco:#fff;
 $font-claro: #f3f3f3;
 $font-blanco:#fff;
 $font-gris:#ccc;
-$header-bg: #3D638A;
-$footer-bg :#245485;
+$font-green:#04c2c9;
 $open-sans:'Open Sans',
 sans-serif;
-$sombra: #828282;
+$sombra: #04c2c9;
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: $website-bg;
     font-size: 16px;
     font-family: $open-sans;
+    width: 100vw;
 }
 
 .container {
@@ -67,7 +74,7 @@ header {
             text-decoration: none;
             cursor: pointer;
             &:hover {
-                color: $font-blanco;
+                color: $font-green;
                 transition: all 0.3s;
             }
         }
@@ -113,7 +120,8 @@ header {
                 font-size: 2.5em;
             }
             P {
-                font-size: 1.5em;
+                font-size: 1.3em;
+                color: rgba($color: #5e5c5c, $alpha: 1.0);
             }
         }
     }
@@ -175,6 +183,7 @@ header {
             width: 70%;
             display: flex;
             flex-direction: column;
+            margin-left: 40px;
             input {
                 padding: 15px;
                 width: 90%;
@@ -183,7 +192,7 @@ header {
                 border: none;
             }
             input[type='submit'] {
-                background: $footer-bg;
+                background: $boton-bg;
                 color: $font-blanco;
                 width: 25%;
                 margin-top: 8px;
@@ -240,7 +249,7 @@ footer {
     position: sticky;
     z-index: 1000;
     top: 0;
-    box-shadow: 0px 4px 3px rgba(0, 0, 0, .5);
+    box-shadow: 0px 4px 3px rgba(4, 194, 201, 0.5);
     height: 65px;
     width: 100vw;
     transition: all 0.3s;
@@ -274,4 +283,8 @@ footer {
         font-size: 0.9em;
         font-weight: normal;
     }
+}
+
+.fontGreen {
+    color: $font-green;
 }

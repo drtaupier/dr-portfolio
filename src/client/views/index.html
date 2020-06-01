@@ -16,9 +16,9 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#sct1">Home</a></li>
+                    <li><a href="#sct2">About me</a></li>
+                    <li><a href="#sct3">Contact</a></li>
                     <li><a href="https://www.linkedin.com/in/drtaupier/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
                     <li><a href="https://github.com/drtaupier" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
                 </ul>
@@ -26,27 +26,35 @@
         </header>
         <section id="sct1">
             <div class="imagen1">
-                <img src="img/img1.jpg" alt="Reunión de trabajo">
+                <img src="img/me.jpg" alt="Web Developer">
+            </div>
+            <div class="intro">
+                <div class="frase">
+                    <h2>Hello, I'm <span class="fontGreen">David Rivera</span>,</h2>
+                    <p>and I can build websites and web applications using differents Rest API.</p>
+                </div>
             </div>
         </section>
         <section id="sct2">
-            <div class="imagen2"></div>
             <article>
                 <div class="contenido">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, inventore ab? Natus id ullam veritatis, beatae mollitia et velit provident omnis temporibus vel nihil impedit a nisi repudiandae voluptates quibusdam.</p>
                 </div>
             </article>
+            <div class="imagen2"><img src="img/img1.jpg" alt="Reunión"></div>
         </section>
         <section id="sct3">
-            <div class="formulario">
-                <form action="">
+            <div class="formulario" id="formulario">
+                <form action="" id="form">
                     <input type="text" class="nombre" id="nombre" placeholder="Name">
                     <input type="text" class="apellido" id="apellido" placeholder="Last name">
                     <input type="tel" class="cellphone" id="cellphone" placeholder="Cellphone">
                     <input type="email" class="email" id="email" placeholder="name@place.com">
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Write a message.."></textarea>
                     <input type="submit" id="submit" value="Send">
                 </form>
             </div>
+            <div class="imagen3"><img src="img/img3.jpg" alt="Meeting"></div>
         </section>
         <footer id="footer"></footer>
     </div>
