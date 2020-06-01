@@ -1,6 +1,7 @@
 $header-bg: #1b242f;
 $footer-bg: #16212E;
 $boton-bg:#322E61;
+$boton-hover:#38346E;
 $website-bg: #f3f3f3;
 $bg-blanco:#fff;
 $bg-error:#8f1717;
@@ -199,6 +200,10 @@ header {
                 border-radius: 5px;
                 cursor: pointer;
                 margin-bottom: 25px;
+                &:hover {
+                    background: $boton-hover;
+                    transition: all 0.3s;
+                }
             }
             textarea {
                 width: 90%;
@@ -221,7 +226,7 @@ header {
 
 footer {
     grid-area: footer;
-    height: 80px;
+    height: 100px;
     width: 100vw;
     background: $footer-bg;
     display: flex;

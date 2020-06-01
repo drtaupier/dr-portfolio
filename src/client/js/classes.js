@@ -29,5 +29,4 @@ export class UI {
         formulario.appendChild(element);
         setTimeout(() => document.querySelector(`.${style}`).remove(), 3000);
     }
-
 }
