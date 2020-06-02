@@ -89,7 +89,7 @@ header {
     grid-area: section1;
     height: 680px;
     width: 100vw;
-    background: radial-gradient(circle, rgba(87, 125, 94, 0.9612219887955182) 0%, rgba(24, 62, 108, 1) 100%);
+    background: radial-gradient(circle, rgba(87, 125, 94, 0.96) 0%, rgba(24, 62, 108, 1) 100%);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -182,68 +182,13 @@ header {
         width: 960px;
         height: 98%;
         background: $website-bg;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-areas: "prj1""prj2""prj3" "prj4""prj5""prj6""prj7""prj8""prj9";
-        #prj1 {
-            grid-area: 'prj1';
-            border: 1px solid #ccc;
-            img {
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-            }
-        }
-        #prj2 {
-            grid-area: 'prj2';
-            border: 1px solid #ccc;
-            img {
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-            }
-        }
-        #prj3 {
-            grid-area: 'prj3';
-            border: 1px solid #ccc;
-            img {
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-                object-fit: contain;
-            }
-        }
-        #prj4 {
-            grid-area: 'prj4';
-            border: 1px solid #ccc;
-        }
-        #prj5 {
-            grid-area: 'prj5';
-            border: 1px solid #ccc;
-        }
-        #prj6 {
-            grid-area: 'prj6';
-            border: 1px solid #ccc;
-        }
-        #prj7 {
-            grid-area: 'prj7';
-            border: 1px solid #ccc;
-        }
-        #prj8 {
-            grid-area: 'prj8';
-            border: 1px solid #ccc;
-        }
-        #prj9 {
-            grid-area: 'prj9';
-            border: 1px solid #ccc;
-        }
+        display: flex;
     }
 }
 
 #sct4 {
     grid-area: section4;
-    height: 650px;
+    height: 745px;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -379,4 +324,8 @@ footer {
     color: $font-green;
     font-size: 1em;
     font-weight: normal;
+}
+
+.listaActiva {
+    color: $font-green;
 }

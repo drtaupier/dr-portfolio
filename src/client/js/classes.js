@@ -29,4 +29,24 @@ export class UI {
         formulario.appendChild(element);
         setTimeout(() => document.querySelector(`.${style}`).remove(), 3000);
     }
+
+    navActive() {
+        window.addEventListener('scroll', function() {
+            const navBar = document.querySelectorAll('nav ul li a');
+            let fromTop = window.scrollY;
+            console.log('scroll Y: ', fromTop);
+
+            navBar.forEach(link => {
+                let section = document.querySelector(link.hash);
+
+                if ( //offsetTop es la distancia desde cada seccion hasta la parte de arriba del viewport, mientras que offsetHeight es la altura de la seccion:
+                    section.offsetTop - 75 <= fromTop && (section.offsetTop + section.offsetHeight) - 75 > fromTop) {
+                    link.classList.add('listaActiva');
+                } else {
+                    link.classList.remove('listaActiva');
+                }
+            });
+
+        });
+    }
 }
