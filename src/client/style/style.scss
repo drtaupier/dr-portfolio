@@ -142,10 +142,11 @@ header {
     flex-direction: row;
     box-shadow: 8px 5px 10px -7px rgba(120, 120, 120, 0.8);
     article {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 40px;
         height: 100%;
         .contenido {
             width: 80%;
@@ -161,10 +162,11 @@ header {
         width: 50%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        margin-left: 40px;
         img {
-            width: 70%;
+            width: 73%;
         }
     }
 }
@@ -199,11 +201,12 @@ header {
         height: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         flex-direction: column;
+        margin-right: 40px;
         h3 {
             margin-bottom: 10px;
-            margin-left: -47%;
+            margin-right: 50%;
             font-size: 2em;
         }
         form {
@@ -235,6 +238,7 @@ header {
                 width: 90%;
                 border: none;
                 outline: none;
+                padding-left: 15px;
             }
         }
     }
@@ -242,8 +246,9 @@ header {
         width: 50%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        margin-left: 40px;
         img {
             width: 70%;
         }

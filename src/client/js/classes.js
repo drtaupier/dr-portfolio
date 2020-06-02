@@ -34,8 +34,6 @@ export class UI {
         window.addEventListener('scroll', function() {
             const navBar = document.querySelectorAll('nav ul li a');
             let fromTop = window.scrollY;
-            console.log('scroll Y: ', fromTop);
-
             navBar.forEach(link => {
                 let section = document.querySelector(link.hash);
 
