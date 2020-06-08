@@ -38,7 +38,7 @@ export class UI {
                 let section = document.querySelector(link.hash);
 
                 if ( //offsetTop es la distancia desde cada seccion hasta la parte de arriba del viewport, mientras que offsetHeight es la altura de la seccion:
-                    section.offsetTop - 75 <= fromTop && (section.offsetTop + section.offsetHeight) - 75 > fromTop) {
+                    section.offsetTop - 175 <= fromTop && (section.offsetTop + section.offsetHeight) - 175 > fromTop) {
                     link.classList.add('listaActiva');
                 } else {
                     link.classList.remove('listaActiva');
@@ -46,5 +46,34 @@ export class UI {
             });
 
         });
+    }
+
+    slider() {
+        const i = 0;
+        let images = [];
+        const time = 3000;
+
+        //images list:
+        images[0] = 'img/img4.png';
+        images[0] = 'img/img5.png';
+        images[0] = 'img/img6.png';
+
+        function changeImg() {
+            document.slide.src = images[i];
+            if (i < images.length - 1) {
+                i++;
+            } else
+                i = 0;
+        }
+
+        setTimeout("changeImg()", time);
+    }
+
+    prevSlide() {
+
+    }
+
+    nextSlide() {
+
     }
 }

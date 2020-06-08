@@ -1,6 +1,7 @@
 $header-bg: #1b242f;
 $footer-bg: #16212E;
 $boton-bg:#322E61;
+$slider-bg:#1b242f;
 $boton-hover:#38346E;
 $website-bg: #f3f3f3;
 $bg-blanco:#fff;
@@ -22,13 +23,13 @@ $sombra: #04c2c9;
 
 html {
     scroll-behavior: smooth;
+    width: 100vw;
 }
 
 body {
     background: $website-bg;
     font-size: 16px;
     font-family: $open-sans;
-    width: 100vw;
     min-width: 320px;
 }
 
@@ -48,6 +49,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 2000;
     .logo {
         width: 25%;
         height: 100%;
@@ -180,11 +182,52 @@ header {
     justify-content: center;
     align-items: center;
     background: $bg-blanco;
-    .projects {
-        width: 960px;
-        height: 98%;
-        background: $website-bg;
+    .slider-contenedor {
+        width: 100%;
         display: flex;
+    }
+    .contenido-slider {
+        width: 100%;
+        height: 600px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-shrink: 0;
+        background: $slider-bg;
+        color: $font-blanco;
+    }
+    .contenido-slider:nth-child(2) {
+        background: #322E61;
+        color: #fff;
+    }
+    .contenido-slider:nth-child(3) {
+        background: #2E271A;
+    }
+    .contenido-slider>img {
+        width: 400px;
+    }
+    .contenido-slider>div {
+        width: 40%;
+    }
+    .contenido-slider h2 {
+        font-weight: 300;
+        text-align: justify;
+        line-height: 30px;
+    }
+    .contenido-slider a {
+        color: #fff;
+        background: #332863;
+        width: 100px;
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+        border-radius: 3px;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+    .contenido-slider:nth-child(2) a {
+        background: #fff;
+        color: #332863;
     }
 }
 
@@ -193,7 +236,7 @@ header {
     height: 745px;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     .formulario {
@@ -333,4 +376,25 @@ footer {
 
 .listaActiva {
     color: $font-green;
+}
+
+@media screen and (max-width:900px) {
+    .contenido-slider>img {
+        width: 250px;
+    }
+    .contenido-slider>div {
+        width: 40%;
+    }
+    .contenido-slider h2 {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .contenido-slider {
+        flex-direction: column-reverse;
+    }
+    .contenido-slider>div {
+        width: 80%;
+    }
 }
