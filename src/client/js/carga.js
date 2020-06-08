@@ -1,7 +1,5 @@
 import { UI } from './classes';
 
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
 const ui = new UI();
 window.onload = function() {
     ui.stickyNav();
@@ -22,8 +20,6 @@ window.onload = function() {
     setInterval(function() {
         slides();
     }, intervalo);
-
-
 
     function slides() {
         slider.style.transform = "translate(" + (-width * contador) + "px)";
