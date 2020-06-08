@@ -3,8 +3,7 @@ export class UI {
         const today = new Date();
         const year = today.getFullYear();
         const footer = document.getElementById('footer');
-        footer.innerHTML = `<h3>David Rivera - Windermere Fl.</h3>`;
-        footer.innerHTML += `<h2>Copyright &copy; ${year}</h2>`;
+        footer.innerHTML = `<h3>Windermere Fl. &copy; ${year}</h3>`;
     }
 
     stickyNav() {
