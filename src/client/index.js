@@ -1,3 +1,2 @@
-import './js/app';
-import './js/carga';
-import './style/style.scss';
+require('./css/style.scss');
+require ('./js/app');
