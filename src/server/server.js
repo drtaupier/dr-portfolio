@@ -1,39 +1,47 @@
-projectData = [];
-const express = require('express');
+require("./config/config");
+const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
+const session = require("express-session");
+const path = require("path");
+
 /*Dependencies*/
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 /*Middleware*/
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(
+  session({
+    secret: "mysecretkey",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 //Cors
-const cors = require('cors');
+const cors = require("cors");
 app.use(cors());
 
-app.use(express.static('dist'));
-app.use(express.static('public'));
+app.use(express.static("dist"));
+app.use(express.static(path.resolve(__dirname, "../../public")));
 
-app.get('/viewData', (req, res) => {
-    res.send(projectData);
-})
+app.get("/viewData", (req, res) => {
+  res.send(projectData);
+});
 
-app.post('/myContacts', (req, res) => {
-    const body = req.body;
-    let data = {
-        name: body.name,
-        lastName: body.lastName,
-        phone: body.phone,
-        email: body.email,
-        message: body.message
-    }
-    projectData.push(data);
-    res.send('Información enviada con éxito');
-    console.log(projectData);
-})
+//Configuracion de rutas:
+app.use(require("./routes/index"));
 
+mongoose.connect("mongodb://localhost:27017/drtaupier", (err, res) => {
+  if (err) {
+    throw err;
+  } else {
+    console.log("DataBase online");
+  }
+});
+
+//Sever
 const port = 3000;
-
-const listening = () => console.log(`Running on localhost: ${port}`);
-
-const server = app.listen(port, listening);
+const server = app.listen(port, () => {
+  console.log(`running on localhost ${port}`);
+});
