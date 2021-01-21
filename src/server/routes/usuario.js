@@ -15,7 +15,7 @@ app.get("/usuario", verificaToken, (req, res) => {
   let limite = req.query.limite || 5;
   desde = Number(desde);
   limite = Number(limite);
-  Usuario.find({ estado: true, role: "USER_ROLE" }, "nombre apellido estado") //El segundo argumento es para decirle que campos quiero que me muestre al momento de hacer la consulta
+  Usuario.find({ estado: true }, "name lname email estado estado role") //El segundo argumento es para decirle que campos quiero que me muestre al momento de hacer la consulta
     .sort("role, fecha_alta")
     .skip(desde)
     .limit(limite)
@@ -27,7 +27,7 @@ app.get("/usuario", verificaToken, (req, res) => {
         });
       }
 
-      Usuario.count({ estado: true, role: "USER_ROLE" }, (err, conteo) => {
+      Usuario.count({ estado: true }, (err, conteo) => {
         res.json({
           ok: true,
           usuarios,
@@ -42,8 +42,8 @@ app.post("/usuario", [verificaToken, verificaAdminRole], (req, res) => {
   const body = req.body;
   //instanciando el Schema
   let usuario = new Usuario({
-    nombre: body.nombre,
-    apellido: body.apellido,
+    name: body.name,
+    lname: body.lname,
     email: body.email,
     password: bcrypt.hashSync(body.password, 10),
   });
