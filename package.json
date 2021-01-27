@@ -12,6 +12,7 @@
     "author": "David Rivera T.",
     "license": "ISC",
     "dependencies": {
+        "@splidejs/splide": "^2.4.21",
         "axios": "^0.19.2",
         "bcrypt": "^5.0.0",
         "body-parser": "^1.19.0",

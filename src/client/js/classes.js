@@ -1,4 +1,4 @@
-export class UI {
+class UI {
   footer() {
     const today = new Date();
     const year = today.getFullYear();
@@ -49,32 +49,24 @@ export class UI {
     });
   }
 
-  slider() {
-    const i = 0;
-    let images = [];
-    const time = 3000;
-
-    //images list:
-    images[0] = "img/img4.png";
-    images[0] = "img/img5.png";
-    images[0] = "img/img6.png";
-
-    function changeImg() {
-      document.slide.src = images[i];
-      if (i < images.length - 1) {
-        i++;
-      } else i = 0;
-    }
-
-    setTimeout("changeImg()", time);
+  projects(proyectos) {
+    const projects = document.querySelector(".projects");
+    const element = document.createElement("div");
+    element.classList.add("project");
+    projects.appendChild(element);
+    const imagen = document.createElement("div");
+    imagen.classList.add("project-image");
+    imagen.innerHTML = `<img src="img/${proyectos.imagen}">`;
+    element.appendChild(imagen);
+    const info = document.createElement("div");
+    info.classList.add("projectInfo");
+    info.innerHTML = `<h2>${proyectos.titulo}</h2>`;
+    info.innerHTML += `<p>${proyectos.informacion}</p>`;
+    element.appendChild(info);
   }
-
-  prevSlide() {}
-
-  nextSlide() {}
 }
 
-export class Formularios {
+class Formularios {
   cleanForm() {
     setTimeout(() => {
       const form = document.querySelector("form");
@@ -104,3 +96,8 @@ export class Formularios {
     });
   }
 }
+
+module.exports = {
+  UI,
+  Formularios,
+};

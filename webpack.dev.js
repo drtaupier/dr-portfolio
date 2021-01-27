@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     index: "./js/index/index.js",
     inicio: "./js/inicio/index.js",
+    inicio2: "./js/inicio2/inicio2.js",
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -66,6 +67,11 @@ module.exports = {
       filename: "inicio.html",
       template: "./views/inicio.html",
       chunks: ["inicio"],
+    }),
+    new HtmlWebpackPlugin({
+      filename: "inicio2.html",
+      template: "./views/inicio2.html",
+      chunks: ["inicio2"],
     }),
     new CleanWebpackPlugin({
       //Simulate the removal of files
