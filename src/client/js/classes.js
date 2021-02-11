@@ -53,10 +53,11 @@ class UI {
     const projects = document.querySelector(".projects");
     const element = document.createElement("div");
     element.classList.add("project");
+    element.classList.add`${proyectos.clase}`;
     projects.appendChild(element);
     const imagen = document.createElement("div");
     imagen.classList.add("project-image");
-    imagen.innerHTML = `<img src="img/${proyectos.imagen}">`;
+    imagen.innerHTML = `<a href="${proyectos.url}" target="_blank"><img src="img/${proyectos.imagen}">`;
     element.appendChild(imagen);
     const info = document.createElement("div");
     info.classList.add("projectInfo");
