@@ -545,16 +545,21 @@ footer {
     flex-direction: column;
     justify-content: center;
     .formulario {
-      align-items: flex-start;
+      align-items: center;
       margin-right: 0;
-      width: 100%;
-      justify-content: center;
+      width: 90%;
+      height: 80%;
+
       h3 {
-        margin-left: 15%;
+        margin-left: -8%;
       }
       form {
         width: 85%;
-        margin-left: auto;
+        align-items: center;
+        margin-left: 0;
+        #submit {
+          margin-left: -64%;
+        }
       }
     }
     .imagen3 {
