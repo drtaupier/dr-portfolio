@@ -3,22 +3,30 @@
         {
             "imagen":"img5.jpg",
             "titulo": "Aylien API",
-            "informacion":"Se realizo una pagina que nos permite analizar el texto ingresado para saber si es positivo, negativo o neutro"
+            "informacion":"I made a page that allows us to analyze any text to know if it is positive, negative or neutral.",
+            "clase":"project1",
+            "url":"https://github.com/drtaupier/AI-Sentiment-Analysis-Application"
         },
         {
             "imagen":"img6.png",
             "titulo":"Blog",
-            "informacion":"Dentro de las clases con Udacity disenamos un blog, el cual nos permitio aprender mas sobre diseno"
+            "informacion":"Studying at Udacity we designed a blog, which allows us to learn more about designing.",
+            "clase":"project2",
+            "url":"https://github.com/drtaupier/blog"
         },
         {
             "imagen":"img8.png",
             "titulo":"Travel App",
-            "informacion":"Disenamos una aplicacion para viajes, ingresando el lugar a donde se quiere ir, obteniendo una imagen del lugar y el tiempo del mismo"
+            "informacion":"We design an application for trips, entering the place where you want to go, obtaining an image of the place and the weather of the same.",
+            "clase":"project3",
+            "url":"https://github.com/drtaupier/travel-planner"
         },
         {
             "imagen":"img7.png",
-            "titulo":"Pagina Web",
-            "informacion":"Desarrollamos esta pagina para poder aplicar las diferentes tecnicas aprendidas con ES6"
+            "titulo":"Web Site",
+            "informacion":"We developed this product in order to apply different techniques learned from ES6",
+            "clase":"project4",
+            "url":"https://github.com/drtaupier/dom"
         }
     ]
 }
