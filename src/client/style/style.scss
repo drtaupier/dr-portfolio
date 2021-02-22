@@ -33,7 +33,7 @@ body {
   background: $website-bg;
   font-size: 16px;
   font-family: "Source Sans Pro", sans-serif;
-  min-width: 320px;
+  min-width: 330px;
   display: flex;
 }
 
@@ -62,7 +62,7 @@ header {
     margin-left: 100px;
     h1 {
       color: $font-blanco;
-      font-size: 1.6em;
+      font-size: clamp(1.2em, 2.5vw, 1.6em); //1.6
       font-weight: normal;
       font-family: $open-sans;
     }
@@ -70,6 +70,7 @@ header {
   nav {
     display: flex;
     margin-right: 60px;
+    min-width: 330px;
     ul {
       list-style: none;
       li {
@@ -100,6 +101,7 @@ header {
   grid-area: section1;
   height: 680px;
   width: 100vw;
+  min-width: 330px;
   background: radial-gradient(
     circle,
     rgba(87, 125, 94, 0.96) 0%,
@@ -156,6 +158,7 @@ header {
   grid-area: section2;
   height: 680px;
   width: 100vw;
+  min-width: 330px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,6 +226,7 @@ header {
   box-shadow: 8px 5px 10px -7px rgba(120, 120, 120, 0.8);
   display: flex;
   justify-content: center;
+  min-width: 330px;
   align-items: center;
   flex-direction: column;
   background: $header-bg;
@@ -328,6 +332,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  min-width: 330px;
   .formulario {
     width: 50%;
     height: 100%;
@@ -397,6 +402,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-width: 330px;
   h3,
   h2 {
     color: $font-blanco;
@@ -419,6 +425,7 @@ footer {
   box-shadow: 0px 4px 3px rgba(87, 125, 94, 0.7);
   height: 65px;
   width: 100vw;
+  min-width: 330px;
   transition: all 0.3s;
 }
 
@@ -470,8 +477,187 @@ footer {
   color: $titulo;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1064px) {
+  header {
+    .logo {
+      width: 35%;
+      margin-left: 70px;
+    }
+    nav {
+      margin-right: 50px;
+    }
+  }
+  #sct1 {
+    .imagen1 {
+      img {
+        width: 45%;
+      }
+    }
+    .intro {
+      .frase {
+        margin-right: 20px;
+      }
+    }
+  }
+  #sct2 {
+    article {
+      .contenido {
+        width: 90%;
+      }
+    }
+    .imagen2 {
+      img {
+        width: 95%;
+      }
+    }
+  }
+  #sct4 {
+    .formulario {
+      align-items: flex-start;
+      h3 {
+        margin-left: 60px;
+      }
+      form {
+        width: 95%;
+        margin-left: 60px;
+      }
+    }
+    .imagen3 {
+      img {
+        width: 95%;
+      }
+    }
+  }
 }
+
+@media screen and (max-width: 992px) {
+  header {
+    nav {
+      margin-right: 30px;
+    }
+  }
+  #sct1 {
+    .intro {
+      .frase {
+        width: 85%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    .logo {
+      margin-left: 0;
+      width: 40%;
+      justify-content: center;
+      h1 {
+        font-size: 1.4em;
+      }
+    }
+    nav {
+      margin-right: 18px;
+    }
+  }
+  #sct1 {
+    .imagen1 {
+      align-items: flex-start;
+      margin-top: 40%;
+      img {
+        width: 50%;
+      }
+    }
+    .intro {
+      .frase {
+        margin-right: 20px;
+        margin-top: -140px;
+        width: 90%;
+      }
+    }
+  }
+  #sct2 {
+    article {
+      margin-right: 0;
+      width: 52%;
+      .contenido {
+        width: 92%;
+      }
+    }
+    .imagen2 {
+      width: 48%;
+      img {
+        width: 95%;
+      }
+    }
+  }
+  #sct3 {
+    height: 810px;
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas: "project1 project2" "project3 project4";
+      justify-items: center;
+      align-items: center;
+    }
+  }
+  #sct4 {
+    margin-right: 0;
+    .formulario {
+      width: 55%;
+      margin-right: 0;
+      align-items: flex-start;
+      h3 {
+        margin-left: 10%;
+      }
+      form {
+        width: 100%;
+      }
+    }
+    .imagen3 {
+      width: 45%;
+      img {
+        width: 95%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  #sct1 {
+    .intro {
+      .frase {
+        h2 {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+  .imagen1 {
+    img {
+      width: 55%;
+    }
+  }
+  #sct2 {
+    article {
+      .contenido {
+        width: 95%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 804px) {
+  header {
+    .logo {
+      justify-content: flex-start;
+      padding-left: 40px;
+    }
+    nav {
+      margin-right: 0;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .container {
     grid-template-columns: repeat(2, 1fr);
@@ -480,8 +666,8 @@ footer {
   }
   header {
     .logo {
-      margin-left: 30px;
-      width: 30%;
+      padding-left: 30px;
+      width: 38%;
       h1 {
         font-size: 1.3em;
       }
@@ -503,12 +689,16 @@ footer {
   #sct1 {
     .imagen1 {
       img {
-        width: 70%;
+        width: 60%;
       }
     }
     .intro {
       display: inline;
       margin-top: 65%;
+      .frase {
+        margin-top: -10%;
+        width: 94%;
+      }
     }
   }
   #sct2 {
@@ -521,7 +711,8 @@ footer {
       padding-top: 20px;
       .contenido {
         padding: 30px;
-        height: 95%;
+        height: 98%;
+        width: 90%;
         p {
           text-align: justify;
         }
@@ -531,6 +722,9 @@ footer {
       width: 90%;
       justify-content: center;
       margin-left: 0;
+      img {
+        width: 65%;
+      }
     }
   }
   #sct3 {
@@ -568,6 +762,35 @@ footer {
   }
 }
 
+@media screen and (max-width: 680px) {
+  header {
+    flex-direction: column;
+    .logo {
+      width: 100vw;
+      height: 50%;
+      justify-content: center;
+    }
+    nav {
+      width: 100vw;
+      height: 50%;
+      justify-content: center;
+    }
+  }
+  #sct1 {
+    .imagen1 {
+      margin-top: 58%;
+    }
+    .intro {
+      margin-top: 75%;
+      .frase {
+        h2 {
+          font-size: 1.8em;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) {
   .container {
     grid-template-columns: 1fr;
@@ -581,7 +804,7 @@ footer {
     justify-content: center;
     .logo {
       margin-left: 0;
-      width: 100%;
+      width: 100vw;
       height: 40%;
       h1 {
         font-size: 1.3em;
@@ -599,29 +822,28 @@ footer {
   }
   #sct1 {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     .imagen1 {
-      height: 60%;
+      height: 50%;
       width: 100vw;
-      padding-top: 200px;
+      margin-top: 40%;
       img {
+        min-width: 41%;
         margin: auto;
-        margin-top: 40x;
-        width: 45%;
+        margin-top: -180px;
+        width: 41%;
       }
     }
     .intro {
       align-items: flex-start;
-      justify-content: start;
-      padding: 10% 30px 0 30px;
+      padding: 10px 30px 0 30px;
       width: 100vw;
-      height: 40%;
+      height: 50%;
       margin-top: initial;
       .frase {
         flex-direction: column;
         width: 100%;
         margin-right: 10px;
+        margin-top: -112px;
       }
       h2 {
         margin-left: 5%;
@@ -652,6 +874,7 @@ footer {
       height: 40%;
       justify-content: center;
       img {
+        width: 85%;
         margin-top: -30px;
       }
     }
@@ -686,6 +909,195 @@ footer {
     }
     .imagen3 {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #sct1 {
+    .imagen1 {
+      margin-top: 46%;
+    }
+  }
+}
+
+@media screen and (max-width: 497px) {
+  header {
+    nav {
+      ul {
+        li {
+          a {
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+  #sct1 {
+    .imagen1 {
+      margin-top: 50%;
+    }
+    .intro {
+      margin-top: -40%;
+      .frase {
+        margin-top: -30px;
+        h2 {
+          font-size: 2.1em;
+        }
+      }
+    }
+  }
+  #sct2 {
+    article {
+      .contenido {
+        height: 92%;
+        .button {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 463px) {
+  #sct1 {
+    .imagen1 {
+      img {
+        width: 50%;
+      }
+    }
+  }
+  #sct2 {
+    .imagen2 {
+      img {
+        width: 85%;
+      }
+    }
+  }
+  #sct3 {
+    .projects {
+      .project {
+        width: 94%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 439px) {
+  #sct1 {
+    .imagen1 {
+      margin-top: 58%;
+      img {
+        width: 55%;
+      }
+    }
+  }
+}
+@media screen and (max-width: 382px) {
+  header {
+    .logo {
+      h1 {
+        font-size: 1.2em;
+      }
+    }
+    nav {
+      ul {
+        li {
+          a {
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+  }
+  #sct1 {
+    .imagen1 {
+      margin-top: 65%;
+      height: 50%;
+      img {
+        width: 60%;
+      }
+    }
+    .intro {
+      height: 0;
+      padding: 5px 10px 0 5px;
+      height: 50%;
+    }
+  }
+  #sct2 {
+    article {
+      .contenido {
+        padding: 15px;
+        width: 95%;
+        .button {
+          margin-top: 10px;
+        }
+      }
+    }
+    .imagen2 {
+      margin-top: -10px;
+      img {
+        width: 90%;
+      }
+    }
+  }
+  #sct3 {
+    h2 {
+      margin-top: -10px;
+    }
+    .projects {
+      .project {
+        width: 100%;
+      }
+    }
+  }
+  #sct4 {
+    .formulario {
+      width: 100%;
+      form {
+        input {
+          width: 95%;
+        }
+        textarea {
+          width: 95%;
+        }
+      }
+      #submit {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 354px) {
+  header {
+    nav {
+      ul {
+        li {
+          a {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+  }
+  #sct1 {
+    .imagen1 {
+      margin-top: 71%;
+    }
+    .intro {
+      .frase {
+        margin-top: -30%;
+      }
+    }
+  }
+  #sct3 {
+    .projects {
+      .project {
+        .project-image {
+          width: 100%;
+        }
+      }
     }
   }
 }
